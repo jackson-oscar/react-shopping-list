@@ -39,13 +39,13 @@ function App() {
   }
 
   // Delete all items
-  function deleteAll(){
+  function deleteAll() {
     setItems([])
   }
 
   // Find when enter key is pressed
-  function keyPressed(e){
-    if(e.keyCode === 13){
+  function keyPressed(e) {
+    if (e.keyCode === 13) {
       handleAddItem(e);
     }
   }
@@ -60,9 +60,9 @@ function App() {
     itemNameRef.current.value = null
   }
 
-  if(items.length !== 1 && items.filter(item => !item.complete).length !== 1){
+  if (items.length !== 1 && items.filter(item => !item.complete).length !== 1) {
     items_left = "items left";
-  }else{
+  } else {
     items_left = "item left";
   }
 
@@ -78,8 +78,10 @@ function App() {
           <Row>
             <Col>
               <input className="item-input" ref={itemNameRef} type="text" onKeyDown={keyPressed}></input>
-              <Button className="list-change-btn add-item-btn" onClick={handleAddItem}>Add Item</Button>
-              <Button className="list-change-btn delete-all-btn" onClick={deleteAll}>Delete All</Button>
+              <Col>
+                <Button className="list-change-btn add-item-btn" onClick={handleAddItem}>Add Item</Button>
+                <Button className="list-change-btn delete-all-btn" onClick={deleteAll}>Delete All</Button>
+              </Col>
               <div>{items.filter(item => !item.complete).length} {items_left}</div>
             </Col>
           </Row>
