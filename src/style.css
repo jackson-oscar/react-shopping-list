@@ -8,6 +8,7 @@
 
 .div-container{
     overflow-y: auto;
+    overflow-x: auto;
     position: fixed;
     width: 100%;
     min-width: 500px;
